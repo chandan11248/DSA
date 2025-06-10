@@ -18,6 +18,18 @@ class list
 {
     node* head;
     node* tail;
+
+};
+class list
+{
+    node* head;
+    node* tail;
+    
+};
+class list
+{
+    node* head;
+    node* tail;
     
 };
 
