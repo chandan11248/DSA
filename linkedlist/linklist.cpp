@@ -14,6 +14,12 @@ class node
     }
 
 };
+class list
+{
+    node* head;
+    node* tail;
+    
+};
 
 int main()
 {
