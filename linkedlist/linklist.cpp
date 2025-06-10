@@ -20,18 +20,6 @@ class list
     node* tail;
 
 };
-class list
-{
-    node* head;
-    node* tail;
-    
-};
-class list
-{
-    node* head;
-    node* tail;
-    
-};
 
 int main()
 {
