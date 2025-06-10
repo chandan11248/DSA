@@ -18,6 +18,10 @@ class list
 {
     node* head;
     node* tail;
+    list()
+    {
+        head=tail=NULL;
+    }
 
 };
 
