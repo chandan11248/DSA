@@ -1,25 +1,31 @@
 #include<iostream>
 using namespace std;
+ class node 
+ {
+ int data;
+ public:
+ node* next;
+ node(int x){
+data=x;
+ }
+ };
 
-class node
-{
+
+ class list {
+
+    node* head;
+    node* tail;
     public:
-    int data;
-    node* next;
+    list()
+{
+    head=tail=0;
+}
+    
 
-    node(int val)
-    {
-        data=val;
-        next=NULL;
-    }
-
-};
-
+ };
 
 int main()
 {
-
-cout<<"enter the data"<<endl;
-
     return 0;
+
 }
