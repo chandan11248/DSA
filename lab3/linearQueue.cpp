@@ -50,7 +50,7 @@ class Queue{
 
             cout << "The elements of queue are: " << endl;
             for(int i = front; i <= rear; i++){
-                cout << queue[i] << " "; // Fix applied here
+                cout << queue[i] << " "; 
             }
             cout << endl;
         }
@@ -66,13 +66,36 @@ class Queue{
         }
 };
 int main(){
+    string add;
     Queue<std::string> tasks;
-    tasks.dequeue();
-    tasks.enqueue("Add a task");
-    tasks.enqueue("Update OS");
-    tasks.enqueue("Refresh monitor");
-    tasks.dequeue();
-    tasks.display();
-    tasks.dequeue();
+    
+
+
+
+
+int x;
+    while (1) {
+        
+        cout << "\n1.ENQUEUE\n2.DEQUEUE\n3.DISPLAY\nChoose: ";
+        cin >> x;
+        switch (x) {
+            case 1:
+
+            cout<<"enter the  string:";
+            cin>>add;
+             tasks.enqueue(add);
+                break;
+            case 2:
+                tasks.dequeue();
+                break;
+            case 3:
+            tasks.display();
+            break;
+            default:
+            cout << "INVALID CHOICE" << endl;
+        }
+    }
     return 0;
+
 }
+

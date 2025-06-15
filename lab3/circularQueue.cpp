@@ -1,5 +1,6 @@
 #include <iostream>
 #define MAX 5
+using namespace std;
 
 
 template<class T>
@@ -37,7 +38,7 @@ class CircularQueue{
                 throw std::underflow_error("Queue Underflow: Circular queue is empty.");
             }
             T item = queue[front];
-            if(front == rear){ // Queue becomes empty after removing the last element
+            if(front == rear){ 
                 front = rear = -1;
             } else {
                 front = (front + 1) % MAX;
@@ -66,26 +67,36 @@ int main(){
     CircularQueue<int> cq;
 
 
-    cq.enqueue(10);
-    cq.enqueue(20);
-    cq.enqueue(30);
-    cq.enqueue(40);
-    cq.enqueue(50);
 
+int x;
+int add;
+    while (1) {
+        
+        cout << "\n1.ENQUEUE\n2.DEQUEUE\n3.DISPLAY\nChoose: ";
+        cin >> x;
+        switch (x) {
+            case 1:
 
-    std::cout << "Initial Queue: " << std::endl;
-    cq.display();
-
-
-    std::cout << "Dequeued: " << cq.dequeue() << std::endl;
-    std::cout << "After Dequeue: " << std::endl;
-    cq.display();
-
-
-    cq.enqueue(60);
-    std::cout << "After Enqueueing 60: " << std::endl;
-    cq.display();
-
-
+            cout<<"enter the  integer:";
+            cin>>add;
+             cq.enqueue(add);
+                break;
+            case 2:
+                cq.dequeue();
+                break;
+            case 3:
+            cq.display();
+            break;
+            default:
+            cout << "INVALID CHOICE" << endl;
+        }
+    }
     return 0;
+
 }
+
+
+
+
+
+  

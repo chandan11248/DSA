@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 10  // Maximum size of deque
+#define SIZE 10  
 
 class Deque {
 private:
@@ -14,17 +14,17 @@ public:
         rear = -1;
     }
 
-    // Check if deque is full
+   
     bool isFull() {
         return ((front == 0 && rear == SIZE - 1) || (front == rear + 1));
     }
 
-    // Check if deque is empty
+
     bool isEmpty() {
         return (front == -1);
     }
 
-    // a. Add at beginning
+    
     void addFront(int value) {
         if (isFull()) {
             cout << "Deque is full\n";
@@ -41,7 +41,7 @@ public:
         arr[front] = value;
     }
 
-    // b. Add at end
+   
     void addRear(int value) {
         if (isFull()) {
             cout << "Deque is full\n";
@@ -58,7 +58,7 @@ public:
         arr[rear] = value;
     }
 
-    // c. Delete from beginning
+   
     void deleteFront() {
         if (isEmpty()) {
             cout << "Deque is empty\n";
@@ -67,7 +67,7 @@ public:
 
         cout << "Deleted from front: " << arr[front] << endl;
         if (front == rear) {
-            front = rear = -1; // deque becomes empty
+            front = rear = -1;
         } else if (front == SIZE - 1) {
             front = 0;
         } else {
@@ -84,7 +84,7 @@ public:
 
         cout << "Deleted from rear: " << arr[rear] << endl;
         if (front == rear) {
-            front = rear = -1; // deque becomes empty
+            front = rear = -1; 
         } else if (rear == 0) {
             rear = SIZE - 1;
         } else {
@@ -92,7 +92,7 @@ public:
         }
     }
 
-    // Display the deque
+    
     void display() {
         if (isEmpty()) {
             cout << "Deque is empty\n";
@@ -114,19 +114,37 @@ public:
 int main() {
     Deque dq;
 
-    dq.addFront(10);
-    dq.addFront(20);
-    dq.display();
+   int x;
+int add;
+    while (1) {
+        
+        cout << "\n1.addfront\n2.addrear\n3.deletefront\n4.deleterear\n5.display\nChoose: ";
+        cin >> x;
+        switch (x) {
+            case 1:
 
-    dq.addRear(30);
-    dq.addRear(40);
-    dq.display();
-
-    dq.deleteFront();
-    dq.display();
-
-    dq.deleteRear();
-    dq.display();
-
+            cout<<"enter the  integer:";
+            cin>>add;
+             dq.addFront(add);
+                break;
+            case 2:
+            cout<<"enter the  integer:";
+            cin>>add;
+                dq.addRear(add);
+                break;
+            case 3:
+            dq.deleteFront();
+            break;
+            case 4:
+            dq.deleteRear();
+            break;
+             case 5:
+            dq.display();
+            break;
+            default:
+            cout << "INVALID CHOICE" << endl;
+        }
+    }
     return 0;
+
 }
