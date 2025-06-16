@@ -14,19 +14,36 @@ class node
     }
 
 };
-class list
+class List
 {
+    public:
     node* head;
     node* tail;
-    list()
+    List()
     {
         head=tail=NULL;
     }
+int pushfront(int val){
+    node* newnode = new node(val);
+    if (head==NULL)
+    {
+        head=tail=newnode;
+    }
+else {
+    newnode->next=head;
+    head=newnode;
+}
+
+}
 
 };
 
 int main()
 {
+ List ll;
+ ll.pushfront(3);
+ 
+
 
 
     return 0;
