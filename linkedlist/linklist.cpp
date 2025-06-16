@@ -1,50 +1,64 @@
 #include<iostream>
 using namespace std;
+ class node {
+ 
+ public:
+int data;
+ 
+ node* next;
+ node(int val)
+ {
+    data=val;
+    next=NULL;
 
-class node
-{
-    public:
-    int data;
-    node* next;
+ }
+ };
 
-    node(int val)
-    {
-        data=val;
-        next=NULL;
-    }
 
-};
-class List
-{
-    public:
-    node* head;
-    node* tail;
-    List()
-    {
+ class  List{
+   node* head;
+   node*tail;
+   public:
+    List(){
         head=tail=NULL;
-    }
-int pushfront(int val){
-    node* newnode = new node(val);
+    } 
+void push_front(int val){
+    node* newnode=new node(val);
     if (head==NULL)
     {
         head=tail=newnode;
     }
-else {
-    newnode->next=head;
-    head=newnode;
+    else{
+        newnode->next=head;
+        head=newnode;
+
+    }
+}
+void display(){
+    node* temp;
+    temp=head;
+    while (temp!=NULL)
+
+    {
+    cout<<temp->data;
+    cout<<"->";
+    temp=temp->next;
+
+    }
+    cout<<"->NULL";
 }
 
-}
+ };
 
-};
+ int main()
+ {
+    List ll;
+    ll.push_front(20);
+    ll.push_front(30);
+    ll.push_front(40);
 
-int main()
-{
- List ll;
- ll.pushfront(3);
- 
-
-
-
+    ll.display();
     return 0;
-}
+
+
+ }
