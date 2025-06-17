@@ -45,8 +45,30 @@ void display(){
     temp=temp->next;
 
     }
-    cout<<"->NULL";
+    cout<<"NULL";
 }
+
+void push_back(int val){
+    node* newnode1=new node(val);
+    if(head==NULL)
+    {
+        head=tail=newnode1;
+    }
+else{
+
+tail->next=newnode1;
+tail=newnode1;
+
+
+}
+
+}
+
+void pop_front()
+{
+    
+}
+
 
  };
 
@@ -58,7 +80,9 @@ void display(){
     ll.push_front(40);
 
     ll.display();
+    cout<<endl;
+    ll.push_back(50);
+    ll.display();
+
     return 0;
-
-
  }
