@@ -27,6 +27,6 @@ data=x;
 int main()
 {
     return 0;
-    cout<<"nice "";
+    cout<<"nice ";
 
 }
