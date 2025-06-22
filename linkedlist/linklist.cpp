@@ -17,16 +17,15 @@ int data;
 
  class  List{
    node* head;
-   node*tail;
    public:
     List(){
-        head=tail=NULL;
+        head==NULL;
     } 
 void push_front(int val){
     node* newnode=new node(val);
     if (head==NULL)
     {
-        head=tail=newnode;
+        head=newnode;
     }
     else{
         newnode->next=head;
@@ -49,20 +48,25 @@ void display(){
 }
 
 void push_back(int val){
-    node* newnode1=new node(val);
-    if(head==NULL)
+    node* temp;
+    temp=head;
+    node* newnode=new node(val);
+    if (head==NULL)
     {
-        head=tail=newnode1;
+        head=newnode;
     }
-else{
+    else{
+            while (temp->next!=NULL)
+    {
+    temp->next=newnode;
+newnode->next=NULL;
+    }
 
-tail->next=newnode1;
-tail=newnode1;
 
+    }
 
-}
-
-}
+    
+ }
 
 void pop_front()
 {
