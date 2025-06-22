@@ -74,7 +74,7 @@ void pop_front()
 }
 void pop_front()
 {
-    
+    nice
 }
 
 
