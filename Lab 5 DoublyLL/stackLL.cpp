@@ -54,17 +54,43 @@ class Stack{
             cout << endl;
         }
 };
-
-int main(){
-
+int main() {
     Stack sll;
-    sll.push(19);
-    sll.push(25);
-    sll.push(38);
-    sll.display();
-    sll.pop();
+    int choice;
 
-    sll.display();
+    while (true) {                       // <-- infinite loop
+        cout << "\n--- Stack Menu ---\n"
+             << "1. Push\n"
+             << "2. Pop\n"
+             << "3. Display\n"
+             << "4. Exit\n"
+             << "Enter choice: ";
+        if (!(cin >> choice)) {          // handle non-integer input
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input!\n";
+            continue;
+        }
 
-    return 0;
+        switch (choice) {
+            case 1: {
+                int val;
+                cout << "Value to push: ";
+                cin >> val;
+                sll.push(val);
+                break;
+            }
+            case 2:
+                sll.pop();
+                break;
+            case 3:
+                sll.display();
+                break;
+            case 4:                      // terminate loop (optional)
+                cout << "Good-bye!\n";
+                return 0;
+            default:
+                cout << "Choose 1-4 only.\n";
+        }
+    }
 }

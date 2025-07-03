@@ -189,25 +189,63 @@ class List{
     }
 };
 
-int main(){
-
+int main() {
     List ll;
-    ll.pushFront(40);
-    ll.pushFront(250);
-    ll.pushFront(330);
-    ll.pushBack(740);
-    ll.pushBack(250);
-    ll.display();
-    ll.insertAfterSp(030, 10);
-    ll.insertBeforeSp(74, 10);
-    ll.display();
-    ll.popEnd();
-    ll.display();
-    ll.popFront();
-    ll.display();
-    ll.deleteAfterSp(65);
-    ll.display();
-    ll.deleteBeforeSp(72);
-    ll.display();
-    return 0;
+    int choice, val, sp;
+
+    while (true) {
+        cout << "\nMenu:\n";
+        cout << "1. Push Front\n2. Push Back\n3. Insert After Specific\n4. Insert Before Specific\n";
+        cout << "5. Pop Front\n6. Pop End\n7. Delete After Specific\n8. Delete Before Specific\n";
+        cout << "9. Display\n0. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            cout << "Enter value: ";
+            cin >> val;
+            ll.pushFront(val);
+            break;
+        case 2:
+            cout << "Enter value: ";
+            cin >> val;
+            ll.pushBack(val);
+            break;
+        case 3:
+            cout << "Enter specific value and new value: ";
+            cin >> sp >> val;
+            ll.insertAfterSp(sp, val);
+            break;
+        case 4:
+            cout << "Enter specific value and new value: ";
+            cin >> sp >> val;
+            ll.insertBeforeSp(sp, val);
+            break;
+        case 5:
+            ll.popFront();
+            break;
+        case 6:
+            ll.popEnd();
+            break;
+        case 7:
+            cout << "Enter specific value: ";
+            cin >> sp;
+            ll.deleteAfterSp(sp);
+            break;
+        case 8:
+            cout << "Enter specific value: ";
+            cin >> sp;
+            ll.deleteBeforeSp(sp);
+            break;
+        case 9:
+            ll.display();
+            break;
+        case 0:
+            cout << "Exiting...\n";
+            return 0;
+        default:
+            cout << "Invalid choice!\n";
+        }
+    }
 }

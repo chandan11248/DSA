@@ -88,13 +88,13 @@ int main(){
 
     Equations e1, e2, final;
 
-    e1.addVal(14,2);
+    e1.addVal(14,4);
     e1.addVal(24,3);
-    e1.addVal(34,4);
+    e1.addVal(34,1);
     e1.display();
-    e2.addVal(5,3);
-    e2.addVal(10,4);
-    e2.addVal(15,5);
+    e2.addVal(5,4);
+    e2.addVal(10,5);
+    e2.addVal(15,2);
     e2.display();
     addEq(e1,e2,final);
     final.display();
